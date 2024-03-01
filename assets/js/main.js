@@ -150,41 +150,23 @@ const tTrauma = document.querySelector('#tableTraumatologia')
 const tDental = document.querySelector('#tableDental')
 
 
+function generaTabla(array, tabla) {
+    array.forEach(e => {
+        tabla.innerHTML += 
+        `<tr>
+        <td>${e.hora}</td>
+        <td>${e.especialista}</td>
+        <td>${e.paciente}</td>
+        <td>${e.rut}</td>
+        <td>${e.prevision}</td>
+        </tr>`;
+    });
+}
 
-arrayRadiologias.forEach(e => {
-    tRadio.innerHTML += 
-    `<tr>
-    <span></span>
-    <td>${e.hora}</td>
-    <td>${e.especialista}</td>
-    <td>${e.paciente}</td>
-    <td>${e.rut}</td>
-    <td>${e.prevision}</td>
-    </tr>`
-});
+generaTabla(arrayRadiologias, tRadio)
+generaTabla(arrayTraumatologias, tTrauma)
+generaTabla(arrayDentales, tDental)
 
-arrayTraumatologias.forEach(e => {
-    tTrauma.innerHTML += 
-    `<tr>
-    <span></span>
-    <td>${e.hora}</td>
-    <td>${e.especialista}</td>
-    <td>${e.paciente}</td>
-    <td>${e.rut}</td>
-    <td>${e.prevision}</td>
-    </tr>`
-});
-
-arrayDentales.forEach(e => {
-    tDental.innerHTML += 
-    `<tr>
-    <td>${e.hora}</td>
-    <td>${e.especialista}</td>
-    <td>${e.paciente}</td>
-    <td>${e.rut}</td>
-    <td>${e.prevision}</td>
-    </tr>`
-});
 
 
 
